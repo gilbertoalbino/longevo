@@ -1,0 +1,83 @@
+header {
+    padding: 50px 0;
+}
+
+header img {
+    width: 250px;
+}
+
+#toolbarAcoes {
+    text-align: center;
+}
+
+#cadastroContainer{
+    margin-top: 35px;
+}
+#cadastroContainer .error-message {
+    font-size: 16px;
+    color: #a94442;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#cadastroContainer fieldset {
+    padding: 15px;
+    border: 1px solid silver;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#cadastroContainer fieldset legend {
+    width: inherit;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#relatorioContainer {
+    display: none;
+}
+
+#relatorioContainer table.table {
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+#relatorioContainer table.table th {
+    background: #F2F2F2;
+    text-align: center;
+}
+
+#relatorioContainer .loading {
+    text-align: center;
+    display: block;
+    padding: 50px 0;
+    font-size: 18px;
+}
+
+.totalChamados, .navigation {
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0 ;
+}
+
+.filtros {
+    margin-bottom: 20px;
+}
+
+.modal-body {
+     font-size: 18px;
+ }
+
+.modal-header-success {
+    color:#fff;
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #5cb85c;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

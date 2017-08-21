@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div id="toolbarAcoes">
+        <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+            <button type="button" class="btn btn-default active" data-action="cadastro">
+                <span class="fa fa-plus"></span> Cadastro
+            </button>
+            <button type="button" class="btn btn-default" data-action="relatorio">
+                <span class="fa fa-search"></span> Relatório
+            </button>
+        </div>
+    </div>
+    <div id="cadastroContainer">
+        <form>
+            <div class="form-group form-group-lg">
+                <label for="numero">Número do Pedido</label>
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" name="pedido" id="pedido"
+                           placeholder="Insira o número do pedido">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="validaPedido">Verificar</button>
+                    </span>
+                </div>
+            </div>
+
+            <fieldset>
+                <legend>Dados do Cliente</legend>
+                <div class="form-group form-group-lg">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="nome" disabled="disabled"
+                           placeholder="Insira o nome completo do cliente">
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" name="email" id="email" disabled="disabled"
+                           placeholder="Insira o email do cliente">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Abertura de Chamado</legend>
+                <div class="form-group form-group-lg">
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" name="titulo" id="titulo" disabled="disabled"
+                           placeholder="Insira o título do chamado">
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label for="observacao">Observação</label>
+                    <textarea name="observacao" id="observacao" cols="30" rows="10" class="form-control" disabled="disabled"
+                              placeholder="Forneça alguma observação"></textarea>
+                </div>
+            </fieldset>
+
+            <div class="form-group form-group-lg">
+                <div class="text-right">
+                    <button type="button" id="salvarChamado" class="btn btn-primary" disabled="disabled">
+                        <span class="fa fa-save"></span> Salvar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="relatorioContainer"></div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Sucesso</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <p><span class="fa fa-check"></span> O chamado foi cadastrado com sucesso!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="closeModal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

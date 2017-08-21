@@ -1,0 +1,40 @@
+<div class="totalChamados">
+    <div class="">
+        {{ pagination.getTotalItemCount }} Chamados encontrado(s)
+    </div>
+</div>
+<div class="filtros">
+    <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Digite o email ou número do pedido" value="{{ filtro }}" id="filtro">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="filtroButton">Filtrar</button>
+      </span>
+    </div>
+</div>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Pedido</th>
+        <th>Cliente</th>
+        <th>E-mail</th>
+        <th>Titulo</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for chamado in pagination %}
+        <tr {% if loop.index is odd %}class="color"{% endif %}>
+            <td>{{ chamado.id }}</td>
+            <td class="text-right">{{ chamado.idPedido }}</td>
+            <td>{{ chamado.titulo }}</td>
+            <td>{{ chamado.nome }}</td>
+            <td>{{ chamado.email }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>

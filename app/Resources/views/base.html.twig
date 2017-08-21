@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}SAC Longevo!{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% stylesheets
+        'css/bootstrap.min.css'
+        'css/bootstrap-theme.min.css'
+        'css/styles.css '
+        filter='cssrewrite' output='css/app-bundle.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% image 'favicon.ico' %}
+        <link rel="shortcut icon" href="{{asset_url}}"/>
+    {%endimage%}
+</head>
+
+<body>
+    <header class="container-fluid text-center">
+        {% image 'img/logo-sac.png' %}
+            <img src="{{ asset_url }}"  alt="SAC Longevo"/>
+        {% endimage %}
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% block body %}{% endblock %}
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+    {% javascripts
+        'js/jquery.min.js'
+        'js/bootstrap.min.js'
+        'js/scripts.js'
+        output='js/app-bundle.js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </body>
+</html>
+
